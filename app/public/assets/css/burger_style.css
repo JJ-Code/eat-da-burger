@@ -1,0 +1,39 @@
+.display-3 {
+    color: rgb(233, 43, 43)!important;
+}
+
+
+
+body {
+    background-color: #3a2828 !important;
+
+}
+
+.jumbotron {
+    background-color: #3a2828 !important;
+    text-align: center !important;
+    padding-top: 1px !important;
+    margin: 0px !important;
+}
+
+img{
+    height: 320px !important;
+    width: 650px !important;
+    margin: auto;
+}
+
+.row {
+    text-align: center;
+}
+
+
+h2 {
+    color: #ffffff !important;
+    font-size: 25px;
+}
+
+
+
+/* .answer:hover {
+    background: orange;
+} */
