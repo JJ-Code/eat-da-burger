@@ -1,0 +1,87 @@
+<div class="jumbotron">
+    <h1 class="display-3">EAT Da Bugers</h1>
+    <h2 class="display-3">All you can eat!!!</h2>
+    <img id="hero" src="/assets/img/burger-hero.jpg">
+
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <!--Beginning of left side-->
+        <div class="col-md-6">
+            <h2> Eat UP!</h2>
+            <div id="eat-up">
+                <!-- Dynamically Insert Ready Burgers Here -->
+                <ul>
+                    {{#each burgers}} {{#unless devoured}}
+                    <div class="input-group">
+                        <li class="form-control">{{burger_name}}</li>
+                        <span class="input-group-btn">
+                            <button class="btn btn-success change-eaten devour-button" type="submit" data-id="{{this.id}}" data-neweaten="{{devoured}}">
+                                {{#if devoured}}Eat Again{{else}}Devour It!{{/if}}</button>
+                        </span>
+                    </div>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+            <!--end of eat up div -->
+
+        </div>
+        <!--end of left side-->
+
+        <!--Beginning of right side-->
+        <div class="col-md-6">
+            <h2>Those were so YUMMY to EAT!</h2>
+            <div id="eaten">
+
+                <!-- Dynamically Insert Eaten Burgers Here -->
+                {{!-- {{#each burgers}} {{#if devoured}}
+                <div class="input-group">
+                    <li class="form-control">{{id}}. {{burger_name}}</li>
+                    <button class="btn btn-success devour-button" type="submit">Delete Burger!</button>
+                </div>
+                {{/if}} {{/each}} --}}
+                <ul>
+                    {{#each burgers}} {{#if devoured}}
+                    <div class="input-group">
+                        <li class="form-control"> {{burger_name}}</li>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" id="delete-button" type="submit" data-id="{{this.id}}" data-neweaten="{{devoured}}">
+                                Delete It!
+                            </button>
+                        </span>
+                    </div>
+                    {{/if}} {{/each}}
+                </ul>
+
+            </div>
+            <!--end of eaten div-->
+        </div>
+        <!--end of right side-->
+
+    </div>
+    <!--end of row-->
+
+
+    <!-- Beginning of order -->
+    <div class="row">
+        <!-- Empty Div to help center textarea -->
+        <div class="col-md-3"></div>
+        <form class="create-form text-center">
+            <div class="col-md-6 form-group">
+
+                <h2>Place a new burger order!</h2>
+
+                <textarea class="form-control" columns="3" rows="4" name="burger_name" id="new_burger"></textarea>
+                <button id="submit-button" type="button" class="btn btn-danger">Place Order</button>
+
+            </div>
+            <!-- Empty Div to help center textarea -->
+        </form>
+        <div class="col-md-3"></div>
+    </div>
+    <!--end of order-->
+</div>
+<!--end of container -->
